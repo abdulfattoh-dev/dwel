@@ -3,10 +3,13 @@ import logo from '../../assets/logo.svg'
 import Popup from '../ui/Popup';
 
 const Header = () => {
-    const [show, setShow] = useState(false);
+    const [showLogin, setShowLogin] = useState(false);
+    const handleShowLogin = () => setShowLogin(true);
+    const handleCloseLogin = () => setShowLogin(false);
 
-    const handleShow = () => setShow(true);
-    const handleClose = () => setShow(false);
+    const [showRegister, setShowRegister] = useState(false);
+    const handleShowRegister = () => setShowRegister(true);
+    const handleCloseRegister = () => setShowRegister(false);
     return (
         <div>
             <div className='container'>
@@ -15,17 +18,28 @@ const Header = () => {
                         <img src={logo} alt="" />
                     </div>
                     <div className='flex gap-5'>
-                        <button onClick={handleShow}>Login</button>
-                        <button onClick={handleShow}>Register</button>
-                        <Popup isShow={show} onClose={handleClose}>
-                            <div className="size-80 bg-white p-4">
-                                <h2>Login form</h2>
-                                <input className="border" type="text" />
-                                <input className="border" type="text" />
+                        <button onClick={handleShowLogin}>Login</button>
+                        <button onClick={handleShowRegister}>Register</button>
+                        <Popup isShow={showLogin} onClose={handleCloseLogin}>
+                            <div className="w-[414px] bg-white p-8 flex flex-col items-center">
                                 <div>
-                                    <button>Submit</button>
-                                    <button onClick={handleClose}>Cancel</button>
+                                    <img src={logo} alt="" />
                                 </div>
+                                <h2 className='text-2xl font-semibold mt-12 mb-6'>DWEL'ga kirish</h2>
+                                <input className="w-[100%] px-4 py-3 bg-[#dee0e5] rounded-[10px]" type="email" placeholder='Enter your email' />
+                                <input className="w-[100%] px-4 py-3 bg-[#dee0e5] rounded-[10px] my-6" type="password" placeholder='Enter your password' />
+                                <button className='w-[100%] py-3 bg-[#7000ff] text-white rounded-[10px] font-semibold'>Submit</button>
+                            </div>
+                        </Popup>
+                        <Popup isShow={showRegister} onClose={handleCloseRegister}>
+                            <div className="w-[414px] bg-white p-8 flex flex-col items-center">
+                                <div>
+                                    <img src={logo} alt="" />
+                                </div>
+                                <h2 className='text-2xl font-semibold mt-12 mb-6'>DWEL'dan ro'yxatdan o'tish</h2>
+                                <input className="w-[100%] px-4 py-3 bg-[#dee0e5] rounded-[10px]" type="email" placeholder='Enter your email' />
+                                <input className="w-[100%] px-4 py-3 bg-[#dee0e5] rounded-[10px] my-6" type="password" placeholder='Enter your password' />
+                                <button className='w-[100%] py-3 bg-[#7000ff] text-white rounded-[10px] font-semibold'>Submit</button>
                             </div>
                         </Popup>
                     </div>
