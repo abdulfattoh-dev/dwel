@@ -10,7 +10,7 @@ const Projects = () => {
             <div className='container'>
                 <div className='my-30'>
                     <h4 className='mb-8'>PROJECTS</h4>
-                    <div className='grid grid-cols-2 gap-8'>
+                    <div className='grid grid-cols-2 max-sm:grid-cols-1 gap-8'>
                         {
                             PROJECTS?.map((item, index) => (
                                 <div key={index}>

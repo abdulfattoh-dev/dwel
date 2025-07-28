@@ -5,7 +5,7 @@ const Hero = () => {
     return (
         <div>
             <div className='container'>
-                <div className='flex justify-center bg-[url(./assets/heroBack.png)]'>
+                <div className='flex justify-center bg-[url(./assets/heroBack.png)] bg-center'>
                     <button className='py-[368px]'>
                         <img src={img} alt="" />
                     </button>
